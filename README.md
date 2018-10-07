@@ -14,15 +14,15 @@ In this game the goal of the player is to move across the gray bricks towards th
 
 ## How to run the application
 - Download GitHub zip file or clone the repository from Github:
- * zip file
+  * zip file
 
 ```
- zip file ((https://github.com/Margo02/Classic-Arcade-Game-Clone.zip)"download zip file")
+ zip file https://github.com/Margo02/Classic-Arcade-Game-Clone.zip
 ```
- * git clone
+  * git clone
 
 ```
-git clone (https://github.com/Margo02/Classic-Arcade-Game-Clone.git)
+git clone https://github.com/Margo02/Classic-Arcade-Game-Clone.git
 
 ```
 - Open a browser window. Find the index.html file in your application's directory. Open the `index.html` file .
