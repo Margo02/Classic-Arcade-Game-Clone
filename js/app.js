@@ -72,9 +72,7 @@ Player.prototype.update = function(dt) {
   let dx;
   let dy;
   let distance;
-  //let playerWon = true;
-
-
+  
   for (let enemy of allEnemies) {
     dx = enemy.x - this.x;
     dy = enemy.y - this.y;
