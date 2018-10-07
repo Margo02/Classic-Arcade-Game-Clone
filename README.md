@@ -17,12 +17,12 @@ In this game the goal of the player is to move across the gray bricks towards th
  * zip file
 
 ```
- zip file [https://github.com/../archive/frogger-arcade-master.zip](https://github.com/..frontend-nanodegree-frogger-arcade-game/archive/frogger-arcade-master.zip "download zip file")
+ zip file ((https://github.com/Margo02/Classic-Arcade-Game-Clone.zip)"download zip file")
 ```
  * git clone
 
 ```
-git clone https://github.com/
+git clone (https://github.com/Margo02/Classic-Arcade-Game-Clone.git)
 
 ```
 - Open a browser window. Find the index.html file in your application's directory. Open the `index.html` file .
