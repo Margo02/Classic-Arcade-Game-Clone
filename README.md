@@ -19,7 +19,7 @@ In this game the goal of the player is to move across the gray bricks towards th
 ```
  zip file https://github.com/Margo02/Classic-Arcade-Game-Clone.zip
 ```
-  * git clone
+   * git clone
 
 ```
 git clone https://github.com/Margo02/Classic-Arcade-Game-Clone.git
