@@ -3,7 +3,7 @@ let pauseGame= false;
 /**
  * @description Enemies our player must avoid.
  **/
-var Enemy = function(x, y, speed) {
+let Enemy = function(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = getRandomInt(60, 200);
@@ -49,17 +49,17 @@ Enemy.prototype.render = function() {
 /**
  * @description  Constructor for player object.
  **/
-var Player = function(x, y, speed){
-  this.score = 0;
-  this.life = 3;
-  this.x = x;
-  this.y = y;
-  this.speed = speed;
-  // The deafult image/sprite for our enemies
-  this.sprite = 'images/char-boy.png';
-  // list of characters
-  this.listPlayers = ['images/char-boy.png','images/char-cat-girl.png','images/char-horn-girl.png'];
-  console.log('List of Players' + this.listPlayers.length);
+let Player = function(x, y, speed){
+   this.score = 0;
+   this.life = 3;
+   this.x = x;
+   this.y = y;
+   this.speed = speed;
+   // The deafult image/sprite for our enemies
+   this.sprite = 'images/char-boy.png';
+   // list of characters
+   this.listPlayers = ['images/char-boy.png','images/char-cat-girl.png','images/char-horn-girl.png'];
+   console.log('List of Players' + this.listPlayers.length);
 
 }
 
@@ -68,11 +68,11 @@ var Player = function(x, y, speed){
  * If collied with ennemy Resets the player to starting position.
  **/
 Player.prototype.update = function(dt) {
- //collision
-  var dx;
-  var dy;
-  var distance;
-  let playerWon = true;
+  //collision
+  let dx;
+  let dy;
+  let distance;
+  //let playerWon = true;
 
 
   for (let enemy of allEnemies) {
@@ -85,10 +85,10 @@ Player.prototype.update = function(dt) {
        console.log("collision  !!!! ");
     }
 
-   // game won function
+    //game won function
     if (this.y < 10) {
          this.score += 10;
-         playerWon = true;
+         //playerWon = true;
          this.gameWon();
          console.log("score" + this.score);
     }
@@ -127,7 +127,7 @@ Player.prototype.gameWon = function() {
  * @description Popup message when user lost game or score points
  * Resets life to 3, score to 0.
  **/
-var popup = function(message){
+let popup = function(message){
   let el = document.getElementById('overlay');
   let msg = document.getElementById("message");
   el.style.visibility = "visible";
@@ -144,7 +144,7 @@ var popup = function(message){
  * @description Popup message: game score.
  *
  **/
-var gameScore = function(){
+let gameScore = function(){
   let score = document.getElementById("score");
   score.innerHTML = " Score " + player.score;
 }
@@ -153,7 +153,7 @@ var gameScore = function(){
  * @description Popup message: inform if player won or lose
  *
  **/
-var gameMessage = function(message){
+let gameMessage = function(message){
   let msg = document.getElementById("message");
   msg.innerHTML = message;
 }
@@ -203,7 +203,6 @@ Player.prototype.render = function() {
  * Reference: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
  **/
 Player.prototype.handleInput = function(key) {
-
    switch (key) {
     case "down": // IE specific value
     case "ArrowDown":
@@ -260,19 +259,19 @@ Player.prototype.handleInput = function(key) {
  * @description press pause key to freeze game, press 2nd time to unfreez
  *
  **/
-var pauseFrogger = function(){
+let pauseFrogger = function(){
    pauseGame = !pauseGame;
 }
 /**
  * @description Create new enemy instances.
  **/
-var allEnemies = [new Enemy(-100, 60, 400), new Enemy(-100, 140, 200), new Enemy(-100, 210, 300)];
+let allEnemies = [new Enemy(-100, 60, 400), new Enemy(-100, 140, 200), new Enemy(-100, 210, 300)];
 
 
 /**
  * @description New player instance
  **/
-var player = new Player(200,400,50);
+let player = new Player(200,400,50);
 
 
 /**
@@ -301,10 +300,9 @@ document.addEventListener('keyup', function(e) {
  * @description Change Player by pressing enter key
 **/
 
-var n = 0;
-var pl = null;
-var changePlayer = function() {
-    //newCharacter=true;
+let n = 0;
+let pl = null;
+let changePlayer = function() {
     n = (n+1)%player.listPlayers.length;
     console.log('n' + n);
     for (i =0; i < player.listPlayers.length ; i++){
@@ -317,12 +315,3 @@ var changePlayer = function() {
     player.sprite = pl;
 
 };
-
-/**
- * @description
-**/
-document.addEventListener('keyup', function(e) {
-  if ([37, 38, 39, 40, 13, 32 ].indexOf(e.keyCode) > -1) {
-    e.preventDefault(); // Cancel the native event
-  }
-}, false);
